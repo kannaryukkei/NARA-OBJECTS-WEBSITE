@@ -1,0 +1,29 @@
+(() => {
+  const menuButton=document.querySelector('.menu-toggle'),nav=document.querySelector('.primary-nav');
+  const navLinks=[...document.querySelectorAll('.primary-nav a[href^="#"]')],progressBar=document.getElementById('progressBar'),toast=document.getElementById('toast');
+  let toastTimer;
+  function closeMenu(){nav.classList.remove('is-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label','Buka navigasi')}
+  menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')!=='true';menuButton.setAttribute('aria-expanded',String(open));menuButton.setAttribute('aria-label',open?'Tutup navigasi':'Buka navigasi');nav.classList.toggle('is-open',open)});
+  navLinks.forEach(link=>link.addEventListener('click',closeMenu));
+  document.addEventListener('keydown',event=>{if(event.key==='Escape')closeMenu()});
+  document.addEventListener('click',event=>{if(nav.classList.contains('is-open')&&!nav.contains(event.target)&&!menuButton.contains(event.target))closeMenu()});
+  const sections=[...document.querySelectorAll('main section[id]')];
+  if('IntersectionObserver'in window){const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){const active=nav.querySelector('a[href="#'+entry.target.id+'"]');navLinks.forEach(link=>link.removeAttribute('aria-current'));if(active)active.setAttribute('aria-current','location')}}),{rootMargin:'-25% 0px -65% 0px'});sections.forEach(section=>observer.observe(section))}
+  function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progressBar.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%'}
+  window.addEventListener('scroll',updateProgress,{passive:true});window.addEventListener('resize',updateProgress);updateProgress();
+  const materialContent={
+    dimensions:{number:'01',title:'Ukuran & ruang gerak',text:'Lebar, tinggi, kedalaman, akses masuk, serta ruang gerak di sekitarnya menjadi titik awal perancangan.'},
+    specification:{number:'02',title:'Material & hardware',text:'Jenis papan atau kayu, mekanisme, engsel, handle, dan detail finishing memengaruhi karakter serta kebutuhan perawatan.'},
+    execution:{number:'03',title:'Lokasi & kompleksitas',text:'Kondisi dinding dan lantai, akses pengiriman, instalasi, serta detail custom ikut membentuk rencana pengerjaan.'}
+  };
+  document.querySelectorAll('.material-tab').forEach(button=>button.addEventListener('click',()=>{const content=materialContent[button.dataset.material];document.querySelectorAll('.material-tab').forEach(tab=>{const selected=tab===button;tab.classList.toggle('is-active',selected);tab.setAttribute('aria-pressed',String(selected))});document.getElementById('materialNumber').textContent=content.number;document.getElementById('materialTitle').textContent=content.title;document.getElementById('materialText').textContent=content.text}));
+  document.querySelectorAll('[data-category]').forEach(link=>link.addEventListener('click',()=>{document.getElementById('category').value=link.dataset.category}));
+  const form=document.getElementById('briefForm'),category=document.getElementById('category'),city=document.getElementById('city'),size=document.getElementById('size'),notes=document.getElementById('notes'),timeline=document.getElementById('timeline');
+  const previewTitle=document.getElementById('previewTitle'),previewText=document.getElementById('previewText'),previewSummary=document.getElementById('previewSummary'),copyButton=document.getElementById('copyBrief'),formStatus=document.getElementById('formStatus'),formProgress=document.getElementById('formProgress');
+  let briefText='';
+  function updateFormProgress(){const completed=[category.value,city.value.trim(),size.value.trim(),notes.value.trim()].filter(Boolean).length;formProgress.textContent=String(Math.max(1,completed)).padStart(2,'0')+' / 04'}
+  [category,city,size,notes,timeline].forEach(field=>{field.addEventListener('input',updateFormProgress);field.addEventListener('change',updateFormProgress)});
+  form.addEventListener('submit',event=>{event.preventDefault();if(!form.reportValidity())return;briefText=['NARA OBJECTS — SPACE BRIEF (LOCAL DEMO)','Kebutuhan: '+category.value,'Area: '+city.value.trim(),'Ukuran perkiraan: '+(size.value.trim()||'Belum ditentukan'),'Kebutuhan ruang: '+(notes.value.trim()||'Belum diisi'),'Target waktu: '+(timeline.value||'Belum ditentukan'),'','Catatan: Ringkasan ini dibuat secara lokal. Tidak dikirim atau disimpan.'].join('\n');previewTitle.textContent='Brief awalmu sudah tersusun.';previewText.textContent='Periksa ringkasan berikut. Kamu dapat menyalinnya untuk digunakan sendiri—belum ada inquiry yang dikirim.';previewSummary.hidden=false;previewSummary.textContent=briefText;copyButton.disabled=false;formStatus.textContent='Ringkasan dibuat di browser ini. Tidak ada data yang dikirim atau disimpan.';previewSummary.scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest'})});
+  copyButton.addEventListener('click',async()=>{if(!briefText)return;try{await navigator.clipboard.writeText(briefText);showToast('Ringkasan brief disalin ke clipboard.')}catch{const area=document.createElement('textarea');area.value=briefText;area.setAttribute('readonly','');area.style.position='fixed';area.style.opacity='0';document.body.appendChild(area);area.select();const copied=document.execCommand('copy');area.remove();showToast(copied?'Ringkasan brief disalin ke clipboard.':'Clipboard tidak tersedia. Pilih dan salin ringkasan secara manual.')}});
+  function showToast(message){toast.textContent=message;toast.classList.add('is-visible');clearTimeout(toastTimer);toastTimer=setTimeout(()=>toast.classList.remove('is-visible'),2600)}
+})();
