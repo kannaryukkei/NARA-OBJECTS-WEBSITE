@@ -1,14 +1,14 @@
 # NARA Objects — Material Atelier
 
-Operator-approved R4 production build. This is a synthetic studio-development concept, not a representation of an operating business.
+Operator-approved R4 production build. Synthetic studio-development concept; not a representation of an operating business.
 
-## Local preview
+## Run locally
 
-Run `python3 -m http.server 8000` from the repository root and open `http://localhost:8000`.
+Requires Python 3. Run `python3 -m http.server 8000` in this directory and open `http://localhost:8000`.
 
 ## Stack
 
-Semantic HTML, CSS and vanilla JavaScript. No package manager or build step is required. Generated illustrative WebP images are included in `assets/`.
+Semantic HTML, custom CSS and vanilla JavaScript. No package manager, build step, paid dependency, backend or third-party runtime service.
 
 ## Interactions
 
@@ -19,6 +19,14 @@ Semantic HTML, CSS and vanilla JavaScript. No package manager or build step is r
 - Validated local-only inquiry brief, progress indicator, preview and copy fallback
 - Keyboard focus and reduced-motion support
 
-## Integrity
+## Visual integrity
 
-This is a synthetic scenario. Images are generated illustrative assets, not project photography or customer proof. The inquiry tool does not transmit or store data. No backend, CRM, analytics or live recipient is connected. Generator model/version and broader commercial terms were not independently exposed.
+The GitHub build uses four custom-authored SVG interior/furniture illustrations for portability. They are illustrative, not documentary project photography or client proof. The local production workspace retains original generated raster studies, which are not part of the GitHub commit.
+
+## Inquiry integrity
+
+The inquiry builder runs in the browser only. It does not transmit or store data. No backend, CRM, analytics or live recipient is connected.
+
+## Verification limits
+
+Chromium 144 + Playwright QA used `page.set_content` with the production HTML, CSS, JavaScript and embedded SVG assets. A clean clone and local server navigation remain unverified in the current execution environment.
