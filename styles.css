@@ -53,3 +53,6 @@ body{font-size:17px;line-height:1.72;-webkit-font-smoothing:auto}
 .collection-card:nth-child(2):hover .card-image img{transform:translate(-50%,0) scale(1.035)}
 .collection-card:nth-child(3):hover .card-image img{transform:translate(0,-50%) scale(1.035)}
 .collection-card:nth-child(4):hover .card-image img{transform:translate(-50%,-50%) scale(1.035)}
+
+.collection-card .card-image{height:clamp(300px,37vw,470px)}
+@media(max-width:760px){.collection-card .card-image{height:clamp(270px,78vw,430px)}}
