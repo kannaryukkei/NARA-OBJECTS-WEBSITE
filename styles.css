@@ -3,3 +3,8 @@
 @media(max-width:800px){.wrap{width:min(100% - 36px,620px)}.nav{min-height:68px}.navbtn{display:block}.links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--ink);padding:18px 24px 24px;flex-direction:column;align-items:flex-start;border-bottom:1px solid var(--line)}.links.open{display:flex}.hero{grid-template-columns:1fr;gap:38px;padding:55px 0 76px}.herofigure{order:-1}.herofigure img{height:340px}.section{padding:76px 0}.sectionhead,.briefgrid,.material{grid-template-columns:1fr;gap:18px}.principles{grid-template-columns:1fr}.category{grid-template-columns:38px 72px 1fr auto;gap:12px}.category-image{width:72px;height:68px}.category p{grid-column:3}.process{grid-template-columns:1fr 1fr}.material img{height:310px}.faq{margin:0}.brief{padding:62px 0}.footer{flex-direction:column}}
 @media(max-width:480px){h1{font-size:52px}.form{grid-template-columns:1fr}.field.full{grid-column:auto}.process{grid-template-columns:1fr}.category h3{font-size:25px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important}}
+
+/* FAQ intrinsic sizing guard: prevent an expanded disclosure from widening its grid track. */
+.sectionhead > *, .faq, .faq details, .faq summary, .faq p { min-width: 0; max-width: 100%; }
+.faq { width: 100%; }
+.faq summary, .faq p { overflow-wrap: anywhere; }
