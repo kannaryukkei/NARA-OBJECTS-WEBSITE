@@ -227,3 +227,17 @@ h1{font-size:clamp(3.25rem,5.65vw,5.8rem);line-height:.99;letter-spacing:-.052em
  .step,.step b{transform:none!important;transition:none!important}
  .step:after{transition:none!important}
 }
+/* R5.4 — dedicated button-driven accordion; open and close share the same transition. */
+.faq-item{border-top:1px solid #c9c1b4}
+.faq-trigger{width:100%;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:22px 4px 22px 0;border:0;background:transparent;color:var(--ink);text-align:left;cursor:pointer;font:clamp(21px,2.2vw,28px)/1.25 var(--serif);transition:color .28s var(--ease-silk)}
+.faq-trigger:hover{color:#8c4a32}
+.faq-trigger>span:first-child{min-width:0}
+.faq-icon{flex:0 0 30px;width:30px;height:30px;display:grid;place-items:center;border:1px solid #b9b1a4;border-radius:50%;font:20px/1 var(--sans);color:var(--clay-deep);transition:transform .42s var(--ease-silk),background .32s,color .32s,border-color .32s}
+.faq-item.is-open .faq-icon{transform:rotate(180deg);background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.faq-panel{display:grid;grid-template-rows:0fr;opacity:0;visibility:hidden;transition:grid-template-rows .48s var(--ease-silk),opacity .32s var(--ease-silk),visibility .48s}
+.faq-panel-inner{min-height:0;overflow:hidden}
+.faq-panel-inner p{max-width:62ch;margin:0;padding:0 46px 22px 0;color:#5c655f;line-height:1.75;overflow-wrap:anywhere}
+.faq-item.is-open .faq-panel{grid-template-rows:1fr;opacity:1;visibility:visible}
+@media(prefers-reduced-motion:reduce){
+ .faq-trigger,.faq-icon,.faq-panel{transition:none!important}
+}
