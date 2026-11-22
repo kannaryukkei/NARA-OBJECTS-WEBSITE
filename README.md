@@ -22,7 +22,7 @@ Semantic HTML, custom CSS and vanilla JavaScript. No package manager, build step
 
 ## Original generated visuals
 
-The five bundled WebP images in `assets/` were generated specifically as fictional NARA Objects concept visuals: `hero-interior.webp`, `wardrobe-concept.webp`, `workspace-concept.webp`, `credenza-concept.webp`, and `pantry-concept.webp`. They are AI-generated illustrative concept imagery, not photographs of real products, completed projects, clients or an operating business.
+The bundled WebP image `assets/nara-categories.webp` was generated specifically as a fictional NARA Objects concept visual. It contains four original interior scenes cropped into wardrobe, workspace, credenza and pantry category views. It is AI-generated concept imagery, not photography of real products, completed projects, clients or an operating business.
 
 ## Inquiry integrity
 
