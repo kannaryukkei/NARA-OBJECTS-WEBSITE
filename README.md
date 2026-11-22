@@ -1,32 +1,33 @@
-# NARA Objects — Material Atelier
+# NARA Objects — Material Atelier (R4.1)
 
-Operator-approved R4 production build. Synthetic studio-development concept; not a representation of an operating business.
+Fictional studio-development website concept. Not a representation of an operating business.
 
 ## Run locally
 
-Requires Python 3. Run `python3 -m http.server 8000` in this directory and open `http://localhost:8000`.
+Requires Python 3. From this folder run `python3 -m http.server 8000`, then open `http://localhost:8000`. Stop with Ctrl+C.
 
 ## Stack
 
 Semantic HTML, custom CSS and vanilla JavaScript. No package manager, build step, paid dependency, backend or third-party runtime service.
 
-## Interactions
+## Included interactions
 
-- Responsive sticky navigation, mobile menu, active section and scroll progress
-- Category cards preselect the matching inquiry category
-- Material selector with live content and pressed state
+- Responsive sticky navigation and mobile menu (Escape, outside click and anchor close)
+- Active section indicator and scroll progress
+- Category cards preselect the local brief category
+- Material selector with live update and pressed states
 - Native FAQ disclosures
-- Validated local-only inquiry brief, progress indicator, preview and copy fallback
-- Keyboard focus and reduced-motion support
+- Validated local-only brief preview and copy fallback
+- Keyboard focus, reduced-motion support and visible no-transmission notice
 
-## Visual integrity
+## Original generated visuals
 
-The GitHub build uses four custom-authored SVG interior/furniture illustrations for portability. They are illustrative, not documentary project photography or client proof. The local production workspace retains original generated raster studies, which are not part of the GitHub commit.
+The bundled WebP image `assets/nara-categories.webp` was generated specifically as a fictional NARA Objects concept visual. It contains four original interior scenes cropped into wardrobe, workspace, credenza and pantry category views. It is AI-generated concept imagery, not photography of real products, completed projects, clients or an operating business.
 
 ## Inquiry integrity
 
-The inquiry builder runs in the browser only. It does not transmit or store data. No backend, CRM, analytics or live recipient is connected.
+The brief builder runs in the browser only. It does not transmit or store data. No backend, CRM, analytics or live recipient is connected.
 
-## Verification limits
+## Verification
 
-Chromium 144 + Playwright QA used `page.set_content` with the production HTML, CSS, JavaScript and embedded SVG assets. A clean clone and local server navigation remain unverified in the current execution environment.
+The production source is tested via local HTTP server for HTTP 200. Browser QA is performed with the exact HTML/CSS/JS and bundled image assets embedded in Chromium; direct localhost browser navigation is blocked by the current administrator policy. See the project handover evidence for exact limitations.
