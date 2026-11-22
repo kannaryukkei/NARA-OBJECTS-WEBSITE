@@ -148,3 +148,11 @@ h1{max-width:10ch;font-size:clamp(3.6rem,6.4vw,6.7rem);line-height:.94;letter-sp
  *,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
  .motion-ready [data-reveal]{opacity:1!important;transform:none!important}
 }
+
+@media(max-width:800px){
+ .links{display:flex;visibility:hidden;opacity:0;pointer-events:none;transform:translateY(-8px);max-height:0;overflow:hidden;transition:opacity .22s,transform .22s,max-height .28s,visibility .22s}
+ .links.open{visibility:visible;opacity:1;pointer-events:auto;transform:translateY(0);max-height:360px}
+}
+.brief p,.briefgrid>div:first-child>p{color:#c4cec5;line-height:1.8}
+.category:focus-visible{outline:3px solid var(--clay-deep);outline-offset:4px}
+.category:focus-visible .category-num{background:#101f1c}
