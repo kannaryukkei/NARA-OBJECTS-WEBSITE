@@ -21,7 +21,7 @@ Semantic HTML, custom CSS and vanilla JavaScript. No package manager, build step
 
 ## Visual integrity
 
-The GitHub build uses four custom-authored SVG interior/furniture illustrations for portability. They are illustrative, not documentary project photography or client proof. The local production workspace retains original generated raster studies, which are not part of the GitHub commit.
+The current revision uses photographic interior references hosted by Unsplash. These are reference imagery, not NARA project photography, client proof or evidence of completed work. The original SVG studies are retained only as source artifacts and are no longer used in the page layout.
 
 ## Inquiry integrity
 
