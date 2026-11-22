@@ -49,10 +49,19 @@ materialTabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectMateri
 const faqItems=[...document.querySelectorAll('.faq details')];
 faqItems.forEach(item=>{
   const summary=item.querySelector('summary');
-  if(summary)summary.setAttribute('aria-expanded',String(item.open));
+  if(!summary)return;
+  summary.setAttribute('aria-expanded',String(item.open));
+  // Own the disclosure click explicitly: native default toggling plus a delayed
+  // single-open toggle handler can race during rapid/repeated taps.
+  summary.addEventListener('click',event=>{
+    event.preventDefault();
+    const shouldOpen=!item.open;
+    faqItems.forEach(other=>{if(other!==item)other.open=false});
+    item.open=shouldOpen;
+    summary.setAttribute('aria-expanded',String(shouldOpen));
+  });
   item.addEventListener('toggle',()=>{
-    if(summary)summary.setAttribute('aria-expanded',String(item.open));
-    if(item.open)faqItems.forEach(other=>{if(other!==item)other.open=false});
+    summary.setAttribute('aria-expanded',String(item.open));
   });
 });
 const fields={category:document.getElementById('category'),city:document.getElementById('city'),size:document.getElementById('size'),timeline:document.getElementById('timeline'),notes:document.getElementById('notes')};let brief='';const generate=document.getElementById('generate'),status=document.getElementById('status'),copy=document.getElementById('copy'),preview=document.getElementById('summary');
