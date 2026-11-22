@@ -31,6 +31,7 @@ const navbtn=document.getElementById('navbtn'),navlinks=document.getElementById(
 function closeNav(){navlinks.classList.remove('open');navbtn.setAttribute('aria-expanded','false')}
 navbtn.addEventListener('click',()=>{const open=navbtn.getAttribute('aria-expanded')!=='true';navbtn.setAttribute('aria-expanded',String(open));navlinks.classList.toggle('open',open)});
 navlinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',closeNav));
+document.addEventListener('click',e=>{if(navlinks.classList.contains('open')&&!navlinks.contains(e.target)&&!navbtn.contains(e.target))closeNav()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navlinks.classList.contains('open')){closeNav();navbtn.focus()}});
 document.querySelectorAll('[data-cat]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('category').value=a.dataset.cat}));
 const fields={category:document.getElementById('category'),city:document.getElementById('city'),size:document.getElementById('size'),timeline:document.getElementById('timeline'),notes:document.getElementById('notes')};let brief='';const form=document.getElementById('briefForm'),status=document.getElementById('status'),copy=document.getElementById('copy'),preview=document.getElementById('summary');
