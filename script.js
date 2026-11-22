@@ -46,22 +46,25 @@ function selectMaterial(tab){
   else materialImage.addEventListener('transitionend',swap,{once:true});
 }
 materialTabs.forEach((tab,index)=>{tab.addEventListener('click',()=>selectMaterial(tab));tab.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?0:event.key==='End'?materialTabs.length-1:(index+(event.key==='ArrowRight'?1:-1)+materialTabs.length)%materialTabs.length;materialTabs[next].focus();selectMaterial(materialTabs[next])})});
-const faqItems=[...document.querySelectorAll('.faq details')];
+const faqItems=[...document.querySelectorAll('.faq-item')];
+function setFaqState(item,open){
+  const trigger=item.querySelector('.faq-trigger');
+  const panel=item.querySelector('.faq-panel');
+  const icon=item.querySelector('.faq-icon');
+  if(!trigger||!panel)return;
+  item.classList.toggle('is-open',open);
+  trigger.setAttribute('aria-expanded',String(open));
+  panel.setAttribute('aria-hidden',String(!open));
+  panel.inert=!open;
+  if(icon)icon.textContent=open?'−':'+';
+}
 faqItems.forEach(item=>{
-  const summary=item.querySelector('summary');
-  if(!summary)return;
-  summary.setAttribute('aria-expanded',String(item.open));
-  // Own the disclosure click explicitly: native default toggling plus a delayed
-  // single-open toggle handler can race during rapid/repeated taps.
-  summary.addEventListener('click',event=>{
-    event.preventDefault();
-    const shouldOpen=!item.open;
-    faqItems.forEach(other=>{if(other!==item)other.open=false});
-    item.open=shouldOpen;
-    summary.setAttribute('aria-expanded',String(shouldOpen));
-  });
-  item.addEventListener('toggle',()=>{
-    summary.setAttribute('aria-expanded',String(item.open));
+  const trigger=item.querySelector('.faq-trigger');
+  if(!trigger)return;
+  setFaqState(item,false);
+  trigger.addEventListener('click',()=>{
+    const shouldOpen=!item.classList.contains('is-open');
+    faqItems.forEach(other=>setFaqState(other,other===item&&shouldOpen));
   });
 });
 const fields={category:document.getElementById('category'),city:document.getElementById('city'),size:document.getElementById('size'),timeline:document.getElementById('timeline'),notes:document.getElementById('notes')};let brief='';const generate=document.getElementById('generate'),status=document.getElementById('status'),copy=document.getElementById('copy'),preview=document.getElementById('summary');
