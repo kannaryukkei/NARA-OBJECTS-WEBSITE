@@ -7,6 +7,22 @@ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&navlinks.classList.
 document.querySelectorAll('[data-cat]').forEach(a=>a.addEventListener('click',()=>{document.getElementById('category').value=a.dataset.cat}));
 const sections=[...document.querySelectorAll('main section[id]')],navItems=[...navlinks.querySelectorAll('a')];
 if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{entries.forEach(entry=>{if(entry.isIntersecting){const current=navItems.find(link=>link.getAttribute('href')==='#'+entry.target.id);if(current)navItems.forEach(link=>{if(link===current)link.setAttribute('aria-current','location');else link.removeAttribute('aria-current')})}})},{rootMargin:'-35% 0px -55% 0px'});sections.forEach(section=>observer.observe(section))}
+const revealNodes=[...document.querySelectorAll('[data-reveal]')];
+const reduceMotion=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(!reduceMotion&&'IntersectionObserver' in window){
+  document.documentElement.classList.add('motion-ready');
+  const revealObserver=new IntersectionObserver((entries,observer)=>{
+    entries.forEach(entry=>{
+      if(!entry.isIntersecting)return;
+      const siblings=[...entry.target.parentElement.querySelectorAll(':scope > [data-reveal]')];
+      const order=Math.max(0,siblings.indexOf(entry.target));
+      entry.target.style.setProperty('--reveal-delay',Math.min(order,4)*85+'ms');
+      requestAnimationFrame(()=>entry.target.classList.add('is-visible'));
+      observer.unobserve(entry.target);
+    });
+  },{threshold:.12,rootMargin:'0px 0px -8% 0px'});
+  revealNodes.forEach(node=>revealObserver.observe(node));
+}else revealNodes.forEach(node=>node.classList.add('is-visible'));
 const progress=document.getElementById('progress');function updateProgress(){const max=document.documentElement.scrollHeight-window.innerHeight;progress.style.width=(max>0?Math.min(100,window.scrollY/max*100):0)+'%'}window.addEventListener('scroll',updateProgress,{passive:true});updateProgress();
 const materialContent={dimensions:{title:'Ukuran & ruang gerak',text:'Lebar, tinggi, kedalaman, akses masuk dan ruang gerak menjadi titik awal perancangan.',src:'assets/credenza.webp',alt:'Visual konsep AI credenza walnut; bukan proyek nyata NARA',label:'01 / DIMENSI'},specification:{title:'Material & hardware',text:'Jenis papan atau kayu, mekanisme, engsel, handle dan detail finishing memengaruhi karakter serta kebutuhan perawatan.',src:'assets/joinery-detail.webp',alt:'Visual konsep AI detail sambungan kayu; bukan dokumentasi produksi NARA',label:'02 / SPESIFIKASI'},execution:{title:'Lokasi & pelaksanaan',text:'Kondisi dinding dan lantai, akses pengiriman, instalasi serta detail custom ikut membentuk rencana pengerjaan.',src:'assets/pantry.webp',alt:'Visual konsep AI pantry cabinetry; bukan proyek nyata NARA',label:'03 / PELAKSANAAN'}};
 const materialTabs=[...document.querySelectorAll('.material-tab')],materialImage=document.getElementById('materialImage'),materialTitle=document.getElementById('materialTitle'),materialText=document.getElementById('materialText'),materialLabel=document.getElementById('materialLabel');
