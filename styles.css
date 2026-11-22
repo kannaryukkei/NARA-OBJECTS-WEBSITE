@@ -40,3 +40,16 @@ body{font-size:17px;line-height:1.72;-webkit-font-smoothing:auto}
 @media(max-width:1000px){body{font-size:16px}.primary-nav>a:not(.nav-cta){font-size:13px}.hero-lede{font-size:17px}.card-meta p{font-size:14px}}
 @media(max-width:760px){body{font-size:16px;line-height:1.7}.primary-nav>a:not(.nav-cta){font-size:16px;padding:15px 0}.nav-cta{font-size:15px;padding:14px 16px}.eyebrow{font-size:11px}.hero-lede{font-size:17px;line-height:1.75}.hero-footnote,.hero-visual figcaption,.hero-bottom{font-size:10px;line-height:1.5}.text-link{font-size:14px}.body-large{font-size:17px;line-height:1.8}.principle-row p{font-size:15px}.section-heading>p,.process-intro{font-size:16px}.card-meta h3{font-size:24px}.card-meta p{font-size:14px;line-height:1.6}.image-index{font-size:10px}.visual-disclosure{font-size:13px}.process-list h3{font-size:24px}.process-list p{font-size:15px;line-height:1.7}.material-copy>p:not(.eyebrow){font-size:16px}.material-tab{font-size:13px;padding:12px 10px}.material-detail h3{font-size:30px}.material-detail p{font-size:16px}.micro-note{font-size:13px}.fit-content>p{font-size:16px}.fit-note p{font-size:14px}.faq-list summary{font-size:20px;padding:22px 0}.faq-list details p{font-size:15px;line-height:1.75}.inquiry-heading>p:last-child{font-size:16px}.form-field>span{font-size:14px}.form-field input,.form-field select,.form-field textarea{font-size:16px}.form-hint,.form-status{font-size:14px}.brief-preview h3{font-size:30px}.brief-preview>p:not(.preview-disclaimer){font-size:15px}.preview-summary{font-size:14px}.preview-disclaimer{font-size:12px}.footer-bottom{font-size:10px}}
 @media(max-width:380px){.hero h1{font-size:clamp(43px,12vw,48px)}.material-tab{font-size:12px;padding:11px 8px}}
+
+
+/* Four-panel AI concept image crops for category cards */
+.collection-card .card-image{position:relative}
+.collection-card .card-image img{position:absolute;left:0;top:0;width:200%;max-width:none;height:200%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+.collection-card:nth-child(1) .card-image img{transform:translate(0,0)}
+.collection-card:nth-child(2) .card-image img{transform:translate(-50%,0)}
+.collection-card:nth-child(3) .card-image img{transform:translate(0,-50%)}
+.collection-card:nth-child(4) .card-image img{transform:translate(-50%,-50%)}
+.collection-card:nth-child(1):hover .card-image img{transform:translate(0,0) scale(1.035)}
+.collection-card:nth-child(2):hover .card-image img{transform:translate(-50%,0) scale(1.035)}
+.collection-card:nth-child(3):hover .card-image img{transform:translate(0,-50%) scale(1.035)}
+.collection-card:nth-child(4):hover .card-image img{transform:translate(-50%,-50%) scale(1.035)}
