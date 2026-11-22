@@ -18,7 +18,7 @@
 - **Budget / authority:** Rp0. Internal research and repository work only. No third-party contact, spending, DNS, merge, deployment or public release without explicit scoped authorization.
 - **Current Lead context:** ADES Guide Rev 2.7, blank Brief template and filled synthetic intake were supplied in this Project and read. GitHub connector read/write access confirmed. Node v22.16.0, Python 3.13, Chromium and Playwright packages are installed in the execution container, but no local checkout exists; shell network DNS prevented GitHub clone/download. GitHub connector can inspect and write repository text files. No browser-rendering/Computer Use tool is available in this session; actual browser rendering remains NOT_VERIFIED. ImageGen tool is available for later use; do not create project north-star before R1.
 - **Baseline:** branch `delivery/nara-r4-3-g5-handover`; commit `51c0eef7bcb598149153248b874bb5cbc3f3b3f9`; tree `263fda790d9c4621b5b4c155e2eb30d27fc25a36`.
-- **Working branch:** `ades/nara-redo-r5-audit`; current head after Brief update recorded in latest commit / verify on read-back. It was created from exact baseline. Baseline branch and PRs remain unchanged.
+- **Working branch:** `ades/nara-redo-r5-audit`; current head `63a762cf2578ab6c1ed8e78fd3d10743552cabe7` (verified read-back after R1/R2 artifact and Brief updates). It was created from exact baseline. Baseline branch and PRs remain unchanged.
 - **Existing review PR:** PR #3 is draft/unmerged. PR #2 is obsolete R4.1. Do not merge either.
 - **Current stage:** PRD approved; G2 research pack validated/frozen with explicit browser/viewport limitations; R1 may begin after this Brief read-back and acceptance of its limitations. G0/G1 status below.
 - **Last verified:** 2026-11-22.
@@ -69,7 +69,7 @@
 |---|---|---|
 | G0 Project activation | PASS WITH LIMITATIONS | Repo identity/access, baseline branch/commit/tree, source/README/QA/PR and isolated branch verified. Shell checkout/DNS and current browser renderer unavailable; recorded as NOT_VERIFIED, not inherited PASS. |
 | G1 Discovery & scope | PASS | Synthetic intake reconciled with baseline; KEEP/IMPROVE/REMOVE/ADD and measurable material improvement defined; complete PRD presented and exact version approved. |
-| G2 Exploration and mode-correct decision | IN_PROGRESS | Common Research & Experience Benchmark Pack frozen in §5. R1→north-star→R2, self-assessment and operator direction approval remain ahead. |
+| G2 Exploration and mode-correct decision | IN_PROGRESS | Research Pack frozen; R1 three concepts source-validated; R2 candidate and non-independent self-assessment complete. Operator direction approval remains pending; browser visual quality NOT_VERIFIED. |
 | G3 Build ready for QA | NOT_STARTED | R1/R2 and production V0/V1 not started. |
 | G4 Review accepted | NOT_STARTED | Internal rendered QA and operator review not done. |
 | G5 Handover complete | NOT_STARTED | Clean-checkout runbook and handover pending. Public release is separate and NOT_AUTHORIZED. |
