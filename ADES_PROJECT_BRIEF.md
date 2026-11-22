@@ -20,6 +20,7 @@
 - **Baseline:** branch `delivery/nara-r4-3-g5-handover`; commit `51c0eef7bcb598149153248b874bb5cbc3f3b3f9`; tree `263fda790d9c4621b5b4c155e2eb30d27fc25a36`.
 - **Working branch:** `ades/nara-redo-r5-audit`; latest Brief revision is committed on this branch. Previous verified HEAD before the latest Brief update was `63a762cf2578ab6c1ed8e78fd3d10743552cabe7`; current HEAD is the latest commit visible on the branch link. It was created from exact baseline. Baseline branch and PRs remain unchanged.
 - **Existing review PR:** PR #3 is draft/unmerged. PR #2 is obsolete R4.1. Do not merge either.
+- **Corrective repository-write incident:** an earlier create-file call omitted the branch parameter and briefly created a whitespace-only `ADES_PROJECT_BRIEF.md` on default branch `main` at commit `18a55104e2a72a935cacfdd6609bcc4c5da46ff5`. It was immediately deleted in revert commit `1d780131b2b0ac7818cdf90ee35885cc7d283293`. Verified the revert tree `837d71365cd81d135adedc254d2a84e40e12e991` is identical to the pre-incident parent commit `814fc8cc55327270bfb60ac83e456c97b5efbfde` tree. The empty file is absent; no website source or asset changes persisted on `main`. Current working branch remains isolated. Main branch HEAD advanced by the corrective revert, but its content tree is restored exactly.
 - **Current stage:** PRD approved; G2 research pack validated/frozen with explicit browser/viewport limitations; R1 may begin after this Brief read-back and acceptance of its limitations. G0/G1 status below.
 - **Last verified:** 2026-11-22.
 
