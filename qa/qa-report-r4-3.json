@@ -1,0 +1,205 @@
+{
+  "viewports": {
+    "desktop": {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "images": [
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 764
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        }
+      ],
+      "reveal": 20,
+      "revealTotal": 20,
+      "bodyHeight": 8013
+    },
+    "tablet": {
+      "width": 1024,
+      "scrollWidth": 1024,
+      "images": [
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 764
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        }
+      ],
+      "reveal": 20,
+      "revealTotal": 20,
+      "bodyHeight": 7156
+    },
+    "mobile": {
+      "width": 390,
+      "scrollWidth": 390,
+      "images": [
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 764
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        }
+      ],
+      "reveal": 20,
+      "revealTotal": 20,
+      "bodyHeight": 9698
+    },
+    "small": {
+      "width": 320,
+      "scrollWidth": 320,
+      "images": [
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1536
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 1448
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 764
+        },
+        {
+          "alt": true,
+          "loaded": true,
+          "width": 760
+        }
+      ],
+      "reveal": 20,
+      "revealTotal": 20,
+      "bodyHeight": 10043
+    }
+  },
+  "interactions": {
+    "mobile_menu_open": "true",
+    "mobile_menu_escape_close": "false",
+    "category_prefill": "Compact workspace",
+    "material_tab": "Material & hardware",
+    "material_image": "data:image/webp;base64,UklGRgR",
+    "faq_single_open": 1,
+    "brief_generated": true,
+    "reduced_motion_reveal_visible": true,
+    "reduced_motion_scroll_behavior": "auto"
+  },
+  "contrast": [],
+  "console_errors": [],
+  "desktop_header_contrast": 7.56,
+  "candidate": "NARA-R4.3-MATERIAL-ATELIER",
+  "date": "2026-11-22",
+  "browser": "Chromium 144 + Playwright",
+  "render_path": "page.set_content with exact production HTML/CSS/JS and actual WebP bytes embedded as data URIs",
+  "contrast_scan_note": "No visible text nodes flagged below 4.5:1 in exercised viewport states. Image-overlay text was placed on a dark caption backing; pseudo-element overlays are not inferred by the simple DOM background sampler.",
+  "limitations": [
+    "Axe-core NOT_RUN",
+    "Manual screen-reader testing NOT_RUN",
+    "Clipboard contents NOT_VERIFIED in restricted embedded origin",
+    "Clean checkout and browser localhost navigation NOT_VERIFIED due environment policy"
+  ]
+}

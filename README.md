@@ -1,32 +1,23 @@
-# NARA Objects — Material Atelier
+# NARA Objects — Material Atelier R4.3
 
-Operator-approved R4 production build. Synthetic studio-development concept; not a representation of an operating business.
+Fictional studio-development website concept. Not a representation of an operating business.
 
 ## Run locally
 
-Requires Python 3. Run `python3 -m http.server 8000` in this directory and open `http://localhost:8000`.
+Requires Python 3. From this folder run `python3 -m http.server 8000`, then open `http://localhost:8000`. Stop with Ctrl+C.
 
-## Stack
+## Stack and interactions
 
-Semantic HTML, custom CSS and vanilla JavaScript. No package manager, build step, paid dependency, backend or third-party runtime service.
+Semantic HTML, custom CSS and vanilla JavaScript. No package manager, build step, paid dependency, backend or third-party runtime service. Responsive sticky navigation includes active-section feedback and a reading-progress indicator. Category cards prefill the local brief. Material controls swap both image and explanatory copy and support arrow-key navigation. FAQ is single-open. The brief builder validates required fields, reflects completion progress, previews a local-only summary and offers clipboard copy with fallback feedback. Controls have consistent hover, pressed, focus and touch states; content reveals use a restrained stagger and short easing rather than hero parallax. Reduced-motion disables transitions and keeps all content visible.
 
-## Interactions
+## Original generated visuals
 
-- Responsive sticky navigation, mobile menu, active section and scroll progress
-- Category cards preselect the matching inquiry category
-- Material selector with live content and pressed state
-- Native FAQ disclosures
-- Validated local-only inquiry brief, progress indicator, preview and copy fallback
-- Keyboard focus and reduced-motion support
-
-## Visual integrity
-
-The GitHub build uses four custom-authored SVG interior/furniture illustrations for portability. They are illustrative, not documentary project photography or client proof. The local production workspace retains original generated raster studies, which are not part of the GitHub commit.
+Six local WebP assets are bundled. They are AI-generated concept visuals, not photographs of real products, completed projects, clients or an operating business. Separate hero, wardrobe, workspace, credenza, pantry and joinery-detail images are used; no collage is reused as category photography.
 
 ## Inquiry integrity
 
-The inquiry builder runs in the browser only. It does not transmit or store data. No backend, CRM, analytics or live recipient is connected.
+The brief builder runs in the browser only. It does not transmit or store data. No backend, CRM, analytics or live recipient is connected.
 
-## Verification limits
+## QA notes
 
-Chromium 144 + Playwright QA used `page.set_content` with the production HTML, CSS, JavaScript and embedded SVG assets. A clean clone and local server navigation remain unverified in the current execution environment.
+Chromium 144 + Playwright rendered the exact production HTML/CSS/JS and actual bundled WebP assets at 1440×1000, 1024×900, 390×844 and 320×740. All 7 image elements loaded with alt text; zero horizontal overflow; zero page errors; all 20 reveal targets became visible after incremental scroll. Mobile menu open/Escape close, category prefill, material image and copy swap, FAQ single-open, brief generation and reduced-motion behavior passed. A rendered text-node contrast scan found no flagged text nodes below 4.5:1 in the exercised states. Browser harness uses `page.set_content` with embedded local image bytes because direct Chromium navigation to localhost is blocked by the current administrator policy. Local HTTP responses were independently checked previously; clean-clone navigation, axe-core and manual screen-reader testing remain NOT_VERIFIED / NOT_RUN. Clipboard API content remains NOT_VERIFIED in the restricted embedded origin.
