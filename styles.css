@@ -212,15 +212,18 @@ h1{font-size:clamp(3.25rem,5.65vw,5.8rem);line-height:.99;letter-spacing:-.052em
 }
 
 
-/* R5.2 — restore the original process lift and make the FAQ disclosure reliably collapsible. */
-.step{transition:transform .35s var(--ease-out),border-color .3s}
-@media(hover:hover) and (prefers-reduced-motion:no-preference){
- .step:hover{transform:translateY(-5px);border-color:var(--paper)}
-}
+/* R5.3 — make process feedback perceptible across pointer, focus and touch states. */
+.step{position:relative;transition:transform .35s var(--ease-out),border-color .3s,color .3s}
+.step:after{content:"";display:block;width:0;height:2px;background:var(--clay);margin-top:14px;transition:width .35s var(--ease-out)}
+.step:hover,.step:focus-within{transform:translateY(-5px);border-color:var(--paper)}
+.step:hover:after,.step:focus-within:after{width:42px}
 .step:active{transform:translateY(-2px)}
+.step b{transition:color .3s var(--ease-out),transform .35s var(--ease-out);display:inline-block}
+.step:hover b,.step:focus-within b{color:var(--paper);transform:translateY(-2px)}
 .faq-answer{min-height:0;overflow:hidden}
 .faq-answer>p{min-height:0;overflow:hidden}
 .faq details[open] .faq-answer{min-height:0}
 @media(prefers-reduced-motion:reduce){
- .step{transform:none!important}
+ .step,.step b{transform:none!important;transition:none!important}
+ .step:after{transition:none!important}
 }
