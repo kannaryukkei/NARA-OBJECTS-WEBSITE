@@ -21,7 +21,7 @@
 - **Working branch:** `ades/nara-redo-r5-audit`; latest Brief revision is committed on this branch. Previous verified HEAD before the latest Brief update was `63a762cf2578ab6c1ed8e78fd3d10743552cabe7`; current HEAD is the latest commit visible on the branch link. It was created from exact baseline. Baseline branch and PRs remain unchanged.
 - **Existing review PR:** PR #3 is draft/unmerged. PR #2 is obsolete R4.1. Do not merge either.
 - **Corrective repository-write incident:** an earlier create-file call omitted the branch parameter and briefly created a whitespace-only `ADES_PROJECT_BRIEF.md` on default branch `main` at commit `18a55104e2a72a935cacfdd6609bcc4c5da46ff5`. It was immediately deleted in revert commit `1d780131b2b0ac7818cdf90ee35885cc7d283293`. Verified the revert tree `837d71365cd81d135adedc254d2a84e40e12e991` is identical to the pre-incident parent commit `814fc8cc55327270bfb60ac83e456c97b5efbfde` tree. The empty file is absent; no website source or asset changes persisted on `main`. Current working branch remains isolated. Main branch HEAD advanced by the corrective revert, but its content tree is restored exactly.
-- **Current stage:** PRD approved; G2 research pack validated/frozen with explicit browser/viewport limitations; R1 may begin after this Brief read-back and acceptance of its limitations. G0/G1 status below.
+- **Current stage:** R1 three concepts and same-author R2 candidate complete; G2 awaits operator approval of the material direction. Browser visual quality remains NOT_VERIFIED. G0/G1 status below.
 - **Last verified:** 2026-11-22.
 
 ## 2. Business and visitor outcome
@@ -176,7 +176,7 @@
 - **R2 retain/reject rationale:** retain C1’s spatial index and room-first story. Use C2’s lesson about strong object-detail imagery without adopting a product-catalogue layout. Use C3’s restrained annotation/field-note labels only where they aid orientation; reject its full technical notebook voice. No forced blend.
 - **Single-agent R3 self-assessment (not independent):** provisional recommendation SELECT the R2 “Ruang sebagai Peta” candidate for operator direction review. Strengths: clearest connection to the approved space-first proposition; category index makes the four needs scannable; process/material/scope are explicit; consultation brief is more complete than R4.3 and has no network submission path. Weaknesses/risks: no rendered visual confirmation; static content and AI concept images may not yet feel distinctive enough; material-tab and responsive states are not browser-tested; the four-step process could still feel generic. Strongest moment at source level: room-first hero + numbered category index. Weakest moment at source level: process sequence is familiar and requires distinctive visual treatment. Highest-value next improvement: render and tune hero/media crop, mobile rhythm, contrast and material-tab state in browser before any acceptance.
 - **R3 governance:** single-agent mode has no independent jury, no independent verdict and no consensus. Lead self-assessment is not external validation. Governance recommendation is provisional SELECT; operator material-direction approval is PENDING and is mandatory before R4.
-- **R3:** single-agent self-assessment only; not an independent jury. Operator must approve material design direction before R4.
+
 
 ## 6. Build, assets and verification
 
@@ -203,8 +203,8 @@
 
 - G0: PASS WITH LIMITATIONS.
 - G1: PASS; `NARA-PRD-v1.0` approved 2026-11-22.
-- G2: Research pack `NARA-RESEARCH-v1.0` VALIDATED/FROZEN with browser viewport/interaction limitations recorded.
-- Next: begin single-agent R1 with three materially divergent, inspectable homepage concepts. Do not create north-star until all three are complete and validated. No R4 until explicit operator approval of selected material direction.
+- G2: `NARA-RESEARCH-v1.0` VALIDATED/FROZEN; R1 three concepts and R2 final candidate complete; R3 self-assessment recommends provisional SELECT. Visual north-star image NOT_VERIFIED; written fallback used.
+- Next: obtain explicit operator approval or revision for the R2 `Ruang sebagai Peta` material direction. R4 remains blocked until approval. Browser visual QA remains NOT_VERIFIED.
 - **Release restrictions remain:** no spending, third-party contact, DNS, merge, deployment or public release without explicit scoped operator authorization.
 
 **Maintenance:** Lead updates this one Brief when material project state changes. Never claim unverified work, preview, test, approval or deployment.
